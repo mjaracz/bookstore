@@ -1,0 +1,25 @@
+version: '3.2'
+services:
+  rabbitmq:
+    image: rabbitmq:3.11.20-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    networks:
+      - rabbitmq_go_net
+  book__db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 'password_example'
+      POSTGRES_USER: 'default'
+      POSTGRES_DB: 'bookstore'
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - '8080:8080'
+networks:
+  rabbitmq_go_net:
+    driver: bridge
