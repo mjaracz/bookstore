@@ -1,4 +1,10 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
+import { BookstoreService } from './bookstore.service';
 
 @Controller('bookstore')
-export class BookstoreController {}
+export class BookstoreController {
+  constructor(private readonly bookstoreService: BookstoreService) {}
+
+  @Get('books')
+  async getAllBooks() {}
+}

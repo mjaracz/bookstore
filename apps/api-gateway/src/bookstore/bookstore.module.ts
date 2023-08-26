@@ -10,7 +10,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'RabbitClient',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
+          urls: [`amqp://localhost:${process.env.AMQP_PORT}`],
           queue: 'bookstore_queue',
           queueOptions: {
             durable: false,

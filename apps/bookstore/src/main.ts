@@ -13,8 +13,8 @@ async function bootstrap() {
     {
       transport: Transport.RMQ,
       options: {
-        urls: ['amqp://localhost:5672'],
-        queue: 'bookstore_queue',
+        urls: [`amqp://localhost:${process.env.AMQP_PORT}`],
+        queue: process.env.AMQP_QUEUE,
         noAck: false,
         queueOptions: {
           durable: false,
