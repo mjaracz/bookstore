@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { KnexModule } from 'nest-knexjs';
+import { KnexModule } from 'nestjs-knex';
 import { BookstoreController } from './bookstore.controller';
 import { BookstoreService } from './bookstore.service';
 
