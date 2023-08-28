@@ -6,5 +6,7 @@ export class BookstoreController {
   constructor(private readonly bookstoreService: BookstoreService) {}
 
   @Get('books')
-  async getAllBooks() {}
+  async getAllBooks() {
+    return this.bookstoreService.getAllBooks();
+  }
 }
